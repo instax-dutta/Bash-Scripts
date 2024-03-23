@@ -29,4 +29,4 @@ Should you wish to share your wisdom with fellow System Administrators, feel fre
 
 **Invocation:** (Instructions on how to use the script)
 
-## May your scripts ever run smoothly, and your backups be plentifu!
+## May your scripts ever run smoothly, and your life feel easy!
