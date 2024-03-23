@@ -2,7 +2,7 @@
 
 This repository contains bash scripts designed to streamline common system administration tasks, including a powerful SQL database backup utility that seamlessly integrates with GitHub for robust data protection.
 
-## SQL Database Backup to GitHub (`gitssql.sh`)
+## SQL Database Backup to GitHub (`gitsql.sh`)
 
 This script automates the process of backing up your MySQL database and securely uploading it to your designated GitHub repository. 
 
@@ -23,6 +23,42 @@ This script automates the process of backing up your MySQL database and securely
 * MySQL or MariaDB installed on your server
 * Git installed
 * A GitHub personal access token (instructions: [https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token))
+
+
+## Development Server Setup Script (`setup_dev_server.sh`)
+
+This script simplifies the process of preparing a newly created development server. It installs a comprehensive set of essential tools and packages, laying the foundation for various development workflows.
+
+**Key Features**
+
+* **Core Tools:** Installs build tools (e.g., `build-essential`), version control (Git), and utilities like cURL and Wget.
+* **Language Environments:** Sets up common development environments like Python (with `pip` and `venv`), Java (JDK), and optionally Node.js.
+* **Customization:** Designed with flexibility in mind, allowing for easy addition or removal of packages.
+* **Menu-Driven:** Features a user-friendly menu for selecting specific installation categories or an option to install everything.
+
+**Usage**
+
+1. **Download:** Copy the `setup_dev_server.sh` script to your new server.
+2. **Execute:** Run the script `./setup_dev_server.sh` and follow the interactive menu.
+
+**Example Customization**
+
+To include PostgreSQL in the database options:
+
+```bash
+6)  echo "Database Options (Choose one):"
+    echo "  a. MySQL"
+    echo "  b. PostgreSQL"
+    read -p "Enter your choice (a/b): " database_choice
+    if [[ $database_choice == "a" ]]; then
+      install_package mysql-server 
+    elif [[ $database_choice == "b" ]]; then
+      install_package postgresql 
+    else
+      echo "Invalid database choice"
+    fi 
+    ;;
+
 
 ## Contributing 
 
